@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<!-- <view wx:if="{{music_url}}">
+  <view wx:if="{{isPlayingMusic}}">
+    <view class="background_music" bindtap="play">
+      <image src="/images/music_icon.png" class="musicImg music_icon"/>
+      <image src="/images/music_play.png" class="music_play pauseImg" />
+    </view>
+  </view>
+  <view wx:else>
+    <view class="background_music" bindtap="play">
+      <image src="/images/music_icon.png" class="musicImg"/>
+      <image src="/images/music_play.png" class="music_play playImg" />
+    </view>
+  </view>
+</view> -->
+<view class="container">
+  <view class="code"> {{code}}</view>
+  <view class="nickname"> {{userInfo.nickName}}</view>
+  <!-- <view class="pets">
+    <view wx:for="{{pets}}" > {{item.price}}</view>
+  </view> -->
+</view>

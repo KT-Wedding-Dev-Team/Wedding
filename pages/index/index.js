@@ -2,32 +2,21 @@
 //获取应用实例
 const app = getApp()
 var server = app.globalData.server;
-var appid = app.globalData.appid;
-var code = app.globalData.code;
-var userInfo = app.globalData.userInfo;
 
 Page({
   data: {
-    code: null,
     userInfo: {},
+    code:1,
     isPlayingMusic: true
   },
   onLoad: function () {
     var that = this
-    wx.getStorage({
-      key: 'session',
-      success: function (res) {
+    app.getUserInfo(function(userInfo){
+        console.log(userInfo);
         that.setData({
-          code: res.data
+          userInfo: userInfo
         })
-        console.log(res.data)
-      }
-    })
-    that.setData({
-      userInfo: userInfo,
-      code: code
-
-    })
+      })
     // wx.getUserInfo({
     //   success: function (res) {
 

@@ -1,6 +1,6 @@
 // app.js
 App({
-  logggn: function (cb) {
+  logIn: function (cb) {
     wx.checkSession({
       success: function (e) {
         console.log("session 未过期");
@@ -12,7 +12,7 @@ App({
           success: function (res) {
             if (res.code) {
               wx.request({
-                url: that.globalData.server + "/users/login?js_code=" + res.code,
+                url: "https://api.orchid9.com/users/login?js_code=" + res.code,
                 method: 'GET',
                 header: {
                   'Accept': 'application/json'
@@ -43,9 +43,9 @@ App({
   },
   getUserInfo: function (cb) {
     var that = this;
-    this.login(function () {
-      if(this.globalData.userInfo) {
-        typeof cb == "function" && cb(this.globalData.userInfo);
+    this.logIn(function () {
+      if(that.globalData.userInfo) {
+        typeof cb == "function" && cb(that.globalData.userInfo);
       }
       else {
         wx.getUserInfo({
@@ -59,7 +59,7 @@ App({
 
   },
   onLaunch: function () {
-    this.logggn(function(){});
+    this.logIn(function(){});
   },
   globalData: {
     sessionKey: null,

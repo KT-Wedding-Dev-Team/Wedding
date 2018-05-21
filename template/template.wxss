@@ -1,0 +1,42 @@
+.icon{
+  margin-top: 30rpx;
+  width:54rpx;
+  height: 54rpx;
+  margin-bottom: -20rpx;
+}
+.tabBar{
+  width:100%;
+  position: fixed;
+  bottom:0;
+  background: #fff;
+  font-size:20rpx;
+  color:#8A8A8A;
+  z-index: 99999;
+  height:120rpx;
+  text-align: center;
+}
+
+.tabBar-item{
+  float:left;
+  width:25%;
+  text-align: center;
+  height: 100%;
+}
+/*当前字体颜色*/
+.tabBartext{
+  color:red;
+}
+
+.tabBar-button {
+  background: None;
+  height: 100%;
+  text-align: center;
+  font-size:20rpx;
+  width:100%;
+  border: none;
+
+  
+}
+
+.tabBar-button::after{ border: none; } 
+

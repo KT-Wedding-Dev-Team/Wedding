@@ -1,0 +1,16 @@
+<template name="tabBar">
+<view class="tabBar">
+  <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
+    <view class="tabBar-item">     
+        <button id = "{{item.id}}" class="tabBar-button" open-type="{{item.text== '邀请函' ? 'getUserInfo' :''}}" bindgetuserinfo="getUserInfo" bindtap="{{item.text!= '邀请函' ? 'tap' :''}}">
+          <view>
+            <image class="icon" src='{{item.iconPath}}'>
+            </image>
+          </view> 
+          <view class="{{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}
+          </view>
+        </button>
+    </view>
+  </block>
+</view>
+</template>

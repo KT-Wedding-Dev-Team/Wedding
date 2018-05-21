@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 var server = app.globalData.server;
-
+var template = require('../../template/template.js');
 Page({
   data: {
     userInfo: {},
@@ -10,13 +10,14 @@ Page({
     isPlayingMusic: true
   },
   onLoad: function () {
+    template.tabbar("tabBar", 0, this);//0表示第一个tabbar
     var that = this
-    app.getUserInfo(function(userInfo){
-        console.log(userInfo);
-        that.setData({
-          userInfo: userInfo
-        })
-      })
+    // app.getUserInfo(function(userInfo){
+    //     console.log(userInfo);
+    //     that.setData({
+    //       userInfo: userInfo
+    //     })
+    //   })
     // wx.getUserInfo({
     //   success: function (res) {
 
@@ -58,6 +59,12 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
+  },
+  tap: function(event){
+    template.tap(event);
+  },
+  getUserInfo: function (event) {
+    template.onGetUserInfo(event);
   },
   onShareAppMessage: function (res) {
     var that = this;

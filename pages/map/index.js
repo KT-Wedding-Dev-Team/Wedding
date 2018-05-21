@@ -1,3 +1,5 @@
+var template = require('../../template/template.js');
+
 // pages/map/index.js
 Page({
 
@@ -5,14 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    template.tabbar("tabBar", 2, this);
+
   },
 
   /**
@@ -62,5 +65,8 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  tap: function (event) {
+    template.tap(event);
+  },
 })

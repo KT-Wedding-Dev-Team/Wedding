@@ -1,4 +1,4 @@
-var template = require('../../template/template.js');
+let template = require('../../template/template.js');
 
 // pages/invitation/index.js
 Page({

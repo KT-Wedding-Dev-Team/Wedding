@@ -26,7 +26,7 @@ module.exports = {
         "no-trailing-spaces": 2,
         "no-undef": 1,
         "no-unused-vars": 1,
-        "no-var": 1,
+        "no-var": 2,
         "object-curly-spacing": 2,
         "padded-blocks": 2,
         "quotes": 2,

@@ -1,7 +1,7 @@
 // index.js
 // 获取应用实例
 const app = getApp();
-var template = require('../../template/template.js');
+let template = require('../../template/template.js');
 Page({
   data: {
     userInfo: {},
@@ -12,7 +12,7 @@ Page({
   },
   onLoad: function() {
     template.tabbar('tabBar', 2, this);// 0表示第一个tabbar
-    var that = this;
+    let that = this;
     // app.getUserInfo(function(userInfo){
     //     console.log(userInfo);
     //     that.setData({
@@ -65,7 +65,7 @@ Page({
     template.onGetUserInfo(event);
   },
   onShareAppMessage: function(res) {
-    var that = this;
+    let that = this;
     console.log('lol');
     return {
       title: that.data.mainInfo.share,

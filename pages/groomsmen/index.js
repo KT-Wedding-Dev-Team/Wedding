@@ -1,4 +1,4 @@
-var template = require('../../template/template.js');
+let template = require('../../template/template.js');
 // pages/groomsmen/index.js
 Page({
 
@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function(options) {
     template.tabbar('tabBar', 1, this);// 0表示第一个tabbar
-    var that = this;
+    let that = this;
   },
 
   /**

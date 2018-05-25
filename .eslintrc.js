@@ -11,7 +11,7 @@ module.exports = {
     "rules": {
         "no-console": 1,
         "new-cap": 1,
-        "arrow-parens": 0,
+        "arrow-parens": 2,
         "comma-dangle": 2,
         "eol-last": 2,
         "key-spacing": 2,

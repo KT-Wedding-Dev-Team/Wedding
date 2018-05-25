@@ -14,7 +14,7 @@ module.exports = {
         "arrow-parens": 0,
         "comma-dangle": 2,
         "eol-last": 2,
-        "key-spacing": 0,
+        "key-spacing": 2,
         "max-len": 0,
         "new-cap": 0,
         "no-trailing-spaces": 0,

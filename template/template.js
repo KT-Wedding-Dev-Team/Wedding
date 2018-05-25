@@ -2,7 +2,7 @@
 function tabbarinit() {
   return [
     {
-      "id":0,
+      "id": 0,
       "pagePath": "/pages/invitation/index",
       "iconPath": "/images/3.png",
       "selectedIconPath": "/images/3_selected.png",
@@ -67,5 +67,5 @@ function tap(event){
 module.exports = {
   tabbar: tabbarmain,
   onGetUserInfo: onGetUserInfo,
-  tap:tap,
+  tap: tap,
 }

@@ -5,7 +5,7 @@ var template = require('../../template/template.js');
 Page({
   data: {
     userInfo: {},
-    code:1,
+    code: 1,
     isPlayingMusic: true,
     slideList: [],
 

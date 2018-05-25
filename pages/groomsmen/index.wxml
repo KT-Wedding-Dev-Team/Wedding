@@ -1,4 +1,2 @@
-<import src="../../template/template.wxml"/>
-<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <!--pages/groomsmen/index.wxml-->
 <text>pages/groomsmen/index.wxml</text>

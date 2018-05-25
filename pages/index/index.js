@@ -1,18 +1,18 @@
-//index.js
-//获取应用实例
-const app = getApp()
-var template = require('../../template/template.js');
+// index.js
+// 获取应用实例
+const app = getApp();
+let template = require('../../template/template.js');
 Page({
   data: {
     userInfo: {},
-    code:1,
+    code: 1,
     isPlayingMusic: true,
     slideList: [],
 
   },
-  onLoad: function () {
-    template.tabbar("tabBar", 2, this);//0表示第一个tabbar
-    var that = this;
+  onLoad: function() {
+    template.tabbar('tabBar', 2, this);// 0表示第一个tabbar
+    let that = this;
     // app.getUserInfo(function(userInfo){
     //     console.log(userInfo);
     //     that.setData({
@@ -29,9 +29,9 @@ Page({
       url: 'https://api.orchid9.com/actions/media_info',
       method: 'GET',
       header: {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
       },
-      success: function (res) {
+      success: function(res) {
         // wx.playBackgroundAudio({
         //   dataUrl: res.data.music_url,
         //   title: '',
@@ -39,67 +39,67 @@ Page({
         // })
 
         that.setData({
-          //mainInfo: res.data.mainInfo,
+          // mainInfo: res.data.mainInfo,
           slideList: res.data.slideList,
-          music_url: res.data.music_url
+          music_url: res.data.music_url,
         });
-      }
+      },
     });
   },
-  onReady: function () {
+  onReady: function() {
     // 页面渲染完成
   },
-  onShow: function () {
+  onShow: function() {
     // 页面显示
   },
-  onHide: function () {
+  onHide: function() {
     // 页面隐藏
   },
-  onUnload: function () {
+  onUnload: function() {
     // 页面关闭
   },
-  tap: function(event){
+  tap: function(event) {
     template.tap(event);
   },
-  getUserInfo: function (event) {
+  getUserInfo: function(event) {
     template.onGetUserInfo(event);
   },
-  onShareAppMessage: function (res) {
-    var that = this;
-    //console.log(that.data);
+  onShareAppMessage: function(res) {
+    let that = this;
+    console.log('lol');
     return {
       title: that.data.mainInfo.share,
       imageUrl: that.data.mainInfo.thumb,
       path: 'pages/index/index',
-      success: function (res) {
+      success: function(res) {
         wx.showToast({
           title: '分享成功',
-        })
+        });
       },
-      fail: function (res) {
+      fail: function(res) {
         // 转发失败
         wx.showToast({
           title: '分享取消',
-        })
-      }
-    }
+        });
+      },
+    };
   },
-  play: function (event) {
+  play: function(event) {
     if (this.data.isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({
-        isPlayingMusic: false
-      })
+        isPlayingMusic: false,
+      });
     } else {
       wx.playBackgroundAudio({
         dataUrl: this.data.music_url,
         title: '',
-        coverImgUrl: ''
-      })
+        coverImgUrl: '',
+      });
       this.setData({
-        isPlayingMusic: true
-      })
+        isPlayingMusic: true,
+      });
     }
   },
-})
+});
 

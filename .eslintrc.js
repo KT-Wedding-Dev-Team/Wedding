@@ -9,7 +9,7 @@ module.exports = {
         "browser": true
     },
     "rules": {
-        "no-console": 0,
+        "no-console": 1,
         "new-cap": 1,
         "arrow-parens": 0,
         "comma-dangle": 2,
@@ -17,7 +17,7 @@ module.exports = {
         "key-spacing": 2,
         "max-len": 0,
         "new-cap": 0,
-        "no-trailing-spaces": 0,
+        "no-trailing-spaces": 2,
         "no-undef": 0,
         "no-unused-vars": 0,
         "no-var": 0,
@@ -27,7 +27,7 @@ module.exports = {
         "require-jsdoc": 0,
         "semi": 2,
         "space-before-blocks": 0,
-        "space-before-function-paren": 0,
+        "space-before-function-paren": 2,
         "spaced-comment": 2,
         "valid-jsdoc": 0,
       }

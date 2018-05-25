@@ -66,7 +66,7 @@ Page({
   },
   onShareAppMessage: function (res) {
     var that = this;
-    //console.log(that.data);
+    console.log("lol");
     return {
       title: that.data.mainInfo.share,
       imageUrl: that.data.mainInfo.thumb,

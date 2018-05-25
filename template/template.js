@@ -36,16 +36,16 @@ function tabbarinit() {
       "selectedIconPath": "/images/4_selected.png",
       "text": "交通",
     },
-  ]
+  ];
 }
 //tabbar 主入口
 function tabbarmain(bindName = "tabdata", id, target) {
   var that = target;
   var bindData = {};
   var otabbar = tabbarinit();
-  otabbar[id]['iconPath'] = otabbar[id]['selectedIconPath']//换当前的icon
+  otabbar[id]['iconPath'] = otabbar[id]['selectedIconPath'];//换当前的icon
   otabbar[id]['current'] = 1;
-  bindData[bindName] = otabbar
+  bindData[bindName] = otabbar;
   that.setData({ bindData });
 }
 
@@ -55,17 +55,17 @@ function onGetUserInfo(event){
   var index = event.currentTarget.id;
   wx.redirectTo({
     url: tabbarinit()[index]['pagePath'],
-  })
+  });
 }
 
 function tap(event){
   var index = event.currentTarget.id;
   wx.redirectTo({
     url: tabbarinit()[index]['pagePath'],
-  })
+  });
 }
 module.exports = {
   tabbar: tabbarmain,
   onGetUserInfo: onGetUserInfo,
   tap: tap,
-}
+};

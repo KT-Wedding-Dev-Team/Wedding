@@ -25,7 +25,7 @@ module.exports = {
         "padded-blocks": 0,
         "quotes": 0,
         "require-jsdoc": 0,
-        "semi": 0,
+        "semi": 2,
         "space-before-blocks": 0,
         "space-before-function-paren": 0,
         "spaced-comment": 0,

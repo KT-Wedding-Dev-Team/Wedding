@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
 var template = require('../../template/template.js');
 Page({
   data: {
@@ -74,32 +74,32 @@ Page({
       success: function (res) {
         wx.showToast({
           title: '分享成功',
-        })
+        });
       },
       fail: function (res) {
         // 转发失败
         wx.showToast({
           title: '分享取消',
-        })
+        });
       },
-    }
+    };
   },
   play: function (event) {
     if (this.data.isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({
         isPlayingMusic: false,
-      })
+      });
     } else {
       wx.playBackgroundAudio({
         dataUrl: this.data.music_url,
         title: '',
         coverImgUrl: '',
-      })
+      });
       this.setData({
         isPlayingMusic: true,
-      })
+      });
     }
   },
-})
+});
 

@@ -1,4 +1,3 @@
-@import "/template/template.wxss";
 /**app.wxss**/
 .container {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;

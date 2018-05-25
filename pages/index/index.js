@@ -1,14 +1,12 @@
 // index.js
 // 获取应用实例
 const app = getApp();
-let template = require('../../template/template.js');
 Page({
   data: {
     isPlayingMusic: true,
   },
   onLoad: function() {
-    template.tabbar('tabBar', 2, this);// 0表示第一个tabbar
-
+    let that = this;
     wx.request({
       url: 'https://api.orchid9.com/actions/media_info',
       method: 'GET',
@@ -40,12 +38,6 @@ Page({
   },
   onUnload: function() {
     // 页面关闭
-  },
-  tap: function(event) {
-    template.tap(event);
-  },
-  getUserInfo: function(event) {
-    template.onGetUserInfo(event);
   },
   onShareAppMessage: function(res) {
     let that = this;

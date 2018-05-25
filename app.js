@@ -19,11 +19,6 @@ App({
                 },
                 success: function(res) {
                   console.log(res.data);
-                  // wx.playBackgroundAudio({
-                  //   dataUrl: res.data.music_url,
-                  //   title: '',
-                  //   coverImgUrl: ''
-                  // })
                   wx.setStorage({
                     key: 'generated_session_key',
                     data: res.data['generated_session_key'],

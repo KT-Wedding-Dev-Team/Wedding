@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "description": "Wedding is a WeChat Mini Program developed for Tian and Louise's wedding.",
   "main": ".eslintrc.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "eslint-config-google": "^0.9.1",
     "eslint": "^4.19.1"
   },
-  "devDependencies": {
-    "eslint-config-google": "^0.9.1"
-  },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint .",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -22,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/hyzhangsf/Wedding/issues"
   },
-  "homepage": "https://github.com/hyzhangsf/Wedding#readme"
+  "homepage": "https://github.com/hyzhangsf/Wedding#readme",
+  "keywords": []
 }

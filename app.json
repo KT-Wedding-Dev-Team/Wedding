@@ -12,5 +12,38 @@
     "navigationBarTitleText": " Louise & Tian",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#ff4c91",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/invitation/index",
+        "iconPath": "images/3.png",
+        "selectedIconPath": "images/3_selected.png"
+      },
+      {
+        "pagePath": "pages/groomsmen/index",
+        "iconPath": "images/1.png",
+        "selectedIconPath": "images/1_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/0.png",
+        "selectedIconPath": "images/0_selected.png"
+      },
+      {
+        "pagePath": "pages/bridesmaids/index",
+        "iconPath": "images/2.png",
+        "selectedIconPath": "images/2_selected.png"
+      },
+      {
+        "pagePath": "pages/transportation/index",
+        "iconPath": "images/4.png",
+        "selectedIconPath": "images/4_selected.png"
+      }
+    ]
   }
 }

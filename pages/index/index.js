@@ -11,7 +11,7 @@ Page({
 
   },
   onLoad: function () {
-    template.tabbar("tabBar", 2, this);//0表示第一个tabbar
+    template.tabbar('tabBar', 2, this);//0表示第一个tabbar
     var that = this;
     // app.getUserInfo(function(userInfo){
     //     console.log(userInfo);
@@ -66,7 +66,7 @@ Page({
   },
   onShareAppMessage: function (res) {
     var that = this;
-    console.log("lol");
+    console.log('lol');
     return {
       title: that.data.mainInfo.share,
       imageUrl: that.data.mainInfo.thumb,

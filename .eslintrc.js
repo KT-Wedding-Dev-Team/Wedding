@@ -23,7 +23,7 @@ module.exports = {
         "no-var": 0,
         "object-curly-spacing": 0,
         "padded-blocks": 0,
-        "quotes": 0,
+        "quotes": 2,
         "require-jsdoc": 0,
         "semi": 2,
         "space-before-blocks": 0,

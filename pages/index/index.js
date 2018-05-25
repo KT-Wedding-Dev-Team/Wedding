@@ -1,5 +1,5 @@
-//index.js
-//获取应用实例
+// index.js
+// 获取应用实例
 const app = getApp();
 var template = require('../../template/template.js');
 Page({
@@ -11,7 +11,7 @@ Page({
 
   },
   onLoad: function () {
-    template.tabbar('tabBar', 2, this);//0表示第一个tabbar
+    template.tabbar('tabBar', 2, this);// 0表示第一个tabbar
     var that = this;
     // app.getUserInfo(function(userInfo){
     //     console.log(userInfo);
@@ -39,7 +39,7 @@ Page({
         // })
 
         that.setData({
-          //mainInfo: res.data.mainInfo,
+          // mainInfo: res.data.mainInfo,
           slideList: res.data.slideList,
           music_url: res.data.music_url,
         });

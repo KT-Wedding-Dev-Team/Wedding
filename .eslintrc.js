@@ -28,7 +28,7 @@ module.exports = {
         "semi": 2,
         "space-before-blocks": 0,
         "space-before-function-paren": 0,
-        "spaced-comment": 0,
+        "spaced-comment": 2,
         "valid-jsdoc": 0,
       }
 };

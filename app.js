@@ -1,5 +1,4 @@
 // app.js
-/* global App wx*/
 App({
   logIn: function(cb) {
     wx.checkSession({

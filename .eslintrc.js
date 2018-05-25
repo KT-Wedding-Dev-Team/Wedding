@@ -8,6 +8,12 @@ module.exports = {
         "node": true,
         "browser": true
     },
+    "globals": {
+        // ignore undefined variales in file
+        "wx": true,
+        "Page": true,
+        "App": true,
+    },
     "rules": {
         "no-console": 1,
         "new-cap": 1,

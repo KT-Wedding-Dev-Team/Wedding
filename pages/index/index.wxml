@@ -16,9 +16,11 @@
   </view>
 </view> -->
 <view class="container">
-  <view class="code"> {{code}}</view>
-  <view class="nickname"> {{userInfo.nickName}}</view>
-  <!-- <view class="pets">
-    <view wx:for="{{pets}}" > {{item.price}}</view>
-  </view> -->
+  <view class="swiper">
+    <swiper indicator-dots="false" autoplay="false" interval="5000" duration="1000">
+        <swiper-item wx:for="{{slideList}}" wx:key="slide" wx:id="id" wx:if="{{item}}">
+            <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+        </swiper-item>
+    </swiper>
+  </view>
 </view>

@@ -3,32 +3,41 @@ function tabbarinit() {
   return [
     {
       "id":0,
-      "pagePath": "/pages/index/index",
-      "iconPath": "/images/1.png",
-      "selectedIconPath": "/images/1.png",
-      "text": "首页"
-    },
-    {
-      "id": 1,
       "pagePath": "/pages/invitation/index",
-      "iconPath": "/images/2.png",
-      "selectedIconPath": "/images/2.png",
+      "iconPath": "/images/3.png",
+      "selectedIconPath": "/images/3_selected.png",
       "text": "邀请函"
     },
     {
+      "id": 1,
+      "pagePath": "/pages/groomsmen/index",
+      "iconPath": "/images/1.png",
+      "selectedIconPath": "/images/1_selected.png",
+      "text": "伴郎"
+    },
+
+    {
       "id": 2,
-      "pagePath": "/pages/map/index",
-      "iconPath": "/images/3.png",
-      "selectedIconPath": "/images/3.png",
-      "text": "酒店导航"
+      "pagePath": "/pages/index/index",
+      "iconPath": "/images/0.png",
+      "selectedIconPath": "/images/0_selected.png",
+      "text": "首页"
     },
     {
       "id": 3,
-      "pagePath": "/pages/bless/index",
+      "pagePath": "/pages/bridesmaids/index",
+      "iconPath": "/images/2.png",
+      "selectedIconPath": "/images/2_selected.png",
+      "text": "伴娘"
+    },
+    {
+      "id": 4,
+      "pagePath": "/pages/transportation/index",
       "iconPath": "/images/4.png",
-      "selectedIconPath": "/images/4.png",
-      "text": "好友祝福"
+      "selectedIconPath": "/images/4_selected.png",
+      "text": "交通"
     }
+
   ]
 
 }

@@ -7,8 +7,6 @@
             <image class="icon" src='{{item.iconPath}}'>
             </image>
           </view> 
-          <view class="{{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}
-          </view>
         </button>
     </view>
   </block>

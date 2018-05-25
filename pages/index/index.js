@@ -1,17 +1,18 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var server = app.globalData.server;
 var template = require('../../template/template.js');
 Page({
   data: {
     userInfo: {},
     code:1,
-    isPlayingMusic: true
+    isPlayingMusic: true,
+    slideList: [],
+
   },
   onLoad: function () {
-    template.tabbar("tabBar", 0, this);//0表示第一个tabbar
-    var that = this
+    template.tabbar("tabBar", 2, this);//0表示第一个tabbar
+    var that = this;
     // app.getUserInfo(function(userInfo){
     //     console.log(userInfo);
     //     that.setData({
@@ -24,29 +25,29 @@ Page({
     //   }
     // })
 
-    // wx.request({
-    //   url: server,
-    //   method: 'GET',
-    //   //data: { 'c': 'info', 'appid': appid },
-    //   header: {
-    //     'Accept': 'application/json'
-    //   },
-    //   success: function (res) {
-    //     console.log(res.data)
-    //     // wx.playBackgroundAudio({
-    //     //   dataUrl: res.data.music_url,
-    //     //   title: '',
-    //     //   coverImgUrl: ''
-    //     // })
+    wx.request({
+      url: 'https://api.orchid9.com/actions/media_info',
+      method: 'GET',
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        // wx.playBackgroundAudio({
+        //   dataUrl: res.data.music_url,
+        //   title: '',
+        //   coverImgUrl: ''
+        // })
 
-    //     that.setData({
-    //       pets: res.data
-    //       //mainInfo: res.data.mainInfo,
-    //       //slideList: res.data.slideList,
-    //       //music_url: res.data.music_url
-    //     });
-    //   }
-    // })
+        that.setData({
+          pets: res.data,
+          //mainInfo: res.data.mainInfo,
+          slideList: res.data.slideList,
+          music_url: res.data.music_url
+        });
+      }
+    });
+    console.log(this);
   },
   onReady: function () {
     // 页面渲染完成
@@ -85,23 +86,23 @@ Page({
         })
       }
     }
-  }
-  // play: function (event) {
-  //   if (this.data.isPlayingMusic) {
-  //     wx.pauseBackgroundAudio();
-  //     this.setData({
-  //       isPlayingMusic: false
-  //     })
-  //   } else {
-  //     wx.playBackgroundAudio({
-  //       dataUrl: this.data.music_url,
-  //       title: '',
-  //       coverImgUrl: ''
-  //     })
-  //     this.setData({
-  //       isPlayingMusic: true
-  //     })
-  //   }
-  // },
+  },
+  play: function (event) {
+    if (this.data.isPlayingMusic) {
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      })
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.music_url,
+        title: '',
+        coverImgUrl: ''
+      })
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+  },
 })
 

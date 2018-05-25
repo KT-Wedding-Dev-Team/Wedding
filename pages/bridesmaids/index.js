@@ -1,19 +1,20 @@
 var template = require('../../template/template.js');
-
-// pages/invitation/index.js
+// pages/bridesmaids/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    template.tabbar("tabBar", 0, this);
+    template.tabbar("tabBar", 3, this);//0表示第一个tabbar
+    var that = this;
   },
 
   /**
@@ -64,8 +65,7 @@ Page({
   onShareAppMessage: function () {
   
   },
-
-  getUserInfo: function(event){
+  getUserInfo: function (event) {
     template.onGetUserInfo(event);
   },
   tap: function (event) {

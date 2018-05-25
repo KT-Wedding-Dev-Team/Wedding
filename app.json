@@ -1,14 +1,15 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/groomsmen/index",
+    "pages/bridesmaids/index",
     "pages/invitation/index",
-    "pages/map/index",
-    "pages/bless/index"
+    "pages/transportation/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Married",
+    "navigationBarTitleText": " Louise & Tian",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": false
   }

@@ -14,7 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    template.tabbar("tabBar", 2, this);
+    template.tabbar("tabBar", 4, this);
 
   },
 
@@ -66,7 +66,10 @@ Page({
   onShareAppMessage: function () {
   
   },
+  getUserInfo: function (event) {
+    template.onGetUserInfo(event);
+  },
   tap: function (event) {
     template.tap(event);
-  },
+  }
 })

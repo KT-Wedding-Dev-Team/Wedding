@@ -13,7 +13,7 @@ module.exports = {
         "new-cap": 1,
         "arrow-parens": 0,
         "comma-dangle": 2,
-        "eol-last": 0,
+        "eol-last": 2,
         "key-spacing": 0,
         "max-len": 0,
         "new-cap": 0,

@@ -46,7 +46,7 @@ function tabbarmain(bindName = 'tabdata', id, target) {
   otabbar[id]['iconPath'] = otabbar[id]['selectedIconPath'];// 换当前的icon
   otabbar[id]['current'] = 1;
   bindData[bindName] = otabbar;
-  that.setData({ bindData });
+  that.setData({bindData});
 }
 
 function onGetUserInfo(event){

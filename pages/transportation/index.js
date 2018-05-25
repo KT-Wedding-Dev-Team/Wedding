@@ -15,7 +15,6 @@ Page({
    */
   onLoad: function(options) {
     template.tabbar('tabBar', 4, this);
-
   },
 
   /**

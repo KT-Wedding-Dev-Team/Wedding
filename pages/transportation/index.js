@@ -71,5 +71,5 @@ Page({
   },
   tap: function (event) {
     template.tap(event);
-  }
+  },
 })

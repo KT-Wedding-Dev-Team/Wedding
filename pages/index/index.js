@@ -29,7 +29,7 @@ Page({
       url: 'https://api.orchid9.com/actions/media_info',
       method: 'GET',
       header: {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
       },
       success: function (res) {
         // wx.playBackgroundAudio({
@@ -41,9 +41,9 @@ Page({
         that.setData({
           //mainInfo: res.data.mainInfo,
           slideList: res.data.slideList,
-          music_url: res.data.music_url
+          music_url: res.data.music_url,
         });
-      }
+      },
     });
   },
   onReady: function () {
@@ -81,23 +81,23 @@ Page({
         wx.showToast({
           title: '分享取消',
         })
-      }
+      },
     }
   },
   play: function (event) {
     if (this.data.isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({
-        isPlayingMusic: false
+        isPlayingMusic: false,
       })
     } else {
       wx.playBackgroundAudio({
         dataUrl: this.data.music_url,
         title: '',
-        coverImgUrl: ''
+        coverImgUrl: '',
       })
       this.setData({
-        isPlayingMusic: true
+        isPlayingMusic: true,
       })
     }
   },

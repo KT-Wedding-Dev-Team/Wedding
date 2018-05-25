@@ -22,3 +22,4 @@ project.config.json
 
 # Node
 node_modules
+package-lock.json

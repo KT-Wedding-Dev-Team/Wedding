@@ -15,7 +15,6 @@ function tabbarinit() {
       "selectedIconPath": "/images/1_selected.png",
       "text": "伴郎"
     },
-
     {
       "id": 2,
       "pagePath": "/pages/index/index",
@@ -37,9 +36,7 @@ function tabbarinit() {
       "selectedIconPath": "/images/4_selected.png",
       "text": "交通"
     }
-
   ]
-
 }
 //tabbar 主入口
 function tabbarmain(bindName = "tabdata", id, target) {

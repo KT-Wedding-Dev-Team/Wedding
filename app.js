@@ -25,8 +25,8 @@ App({
                   //   coverImgUrl: ''
                   // })
                   wx.setStorage({
-                    key: 'open_id',
-                    data: res.open_id,
+                    key: 'generated_session_key',
+                    data: res.data['generated_session_key'],
                   });
                   cb();
                 }

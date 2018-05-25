@@ -32,7 +32,6 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
         // wx.playBackgroundAudio({
         //   dataUrl: res.data.music_url,
         //   title: '',
@@ -40,14 +39,12 @@ Page({
         // })
 
         that.setData({
-          pets: res.data,
           //mainInfo: res.data.mainInfo,
           slideList: res.data.slideList,
           music_url: res.data.music_url
         });
       }
     });
-    console.log(this);
   },
   onReady: function () {
     // 页面渲染完成

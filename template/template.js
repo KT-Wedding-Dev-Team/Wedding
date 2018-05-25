@@ -49,7 +49,7 @@ function tabbarmain(bindName = 'tabdata', id, target) {
   that.setData({bindData});
 }
 
-function onGetUserInfo(event){
+function onGetUserInfo(event) {
   console.log(event);
   // wx.setStorageSync("userInfo", event);
   var index = event.currentTarget.id;
@@ -58,7 +58,7 @@ function onGetUserInfo(event){
   });
 }
 
-function tap(event){
+function tap(event) {
   var index = event.currentTarget.id;
   wx.redirectTo({
     url: tabbarinit()[index]['pagePath'],

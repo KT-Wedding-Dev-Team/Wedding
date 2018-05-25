@@ -26,7 +26,7 @@ module.exports = {
         "quotes": 2,
         "require-jsdoc": 0,
         "semi": 2,
-        "space-before-blocks": 0,
+        "space-before-blocks": 2,
         "space-before-function-paren": 2,
         "spaced-comment": 2,
         "valid-jsdoc": 0,

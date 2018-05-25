@@ -58,7 +58,7 @@ Page({
   onUnload: function() {
     // 页面关闭
   },
-  tap: function(event){
+  tap: function(event) {
     template.tap(event);
   },
   getUserInfo: function(event) {

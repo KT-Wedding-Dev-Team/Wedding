@@ -65,7 +65,7 @@ Page({
 
   },
 
-  getUserInfo: function(event){
+  getUserInfo: function(event) {
     template.onGetUserInfo(event);
   },
   tap: function(event) {

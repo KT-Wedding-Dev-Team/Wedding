@@ -1,10 +1,15 @@
 // pages/invitation/index.js
+var animation = wx.createAnimation({
+  duration: 1000,
+  timingFunction: 'ease',
+})
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    animationData:{}
   },
 
   /**
@@ -25,6 +30,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    setInterval(function () {
+      this.setData({
+        animationData: animation.scale(1.1).step().scale(0.95).step().export()
+      });
+    }.bind(this), 2000);
+
 
   },
 
@@ -61,5 +72,9 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  userInfoHandler: function(event){
+    console.log(event);
   }
 });

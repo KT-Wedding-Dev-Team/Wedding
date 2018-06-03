@@ -76,5 +76,5 @@ Page({
 
   userInfoHandler: function(event){
     console.log(event);
-  }
+  },
 });

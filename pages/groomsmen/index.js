@@ -62,5 +62,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
 });

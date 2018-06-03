@@ -17,7 +17,7 @@ Page({
         wx.playBackgroundAudio({
           dataUrl: res.data.music_url,
           title: '',
-          coverImgUrl: ''
+          coverImgUrl: '',
         });
 
         that.setData({

@@ -9,7 +9,7 @@ Page({
     let that = this;
     console.log(app.globalData);
     wx.request({
-      url: app.globalData['server'] + '/actions/media_info',
+      url: app.globalData['api_server'] + '/actions/media_info',
       method: 'GET',
       header: {
         'Accept': 'application/json',

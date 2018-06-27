@@ -125,7 +125,7 @@ Page({
         duration: 2000
       });
       wx.request({
-        url: app.globalData['server'] + '/actions/get_invitation',
+        url: app.globalData['api_server'] + '/actions/get_invitation',
         data: {
           'nick_name': nickName,
         },

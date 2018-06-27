@@ -3,8 +3,10 @@
   <video id="myVideo" src="https://d3rgbrsgh3n846.cloudfront.net/video/test.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover"
   >
   <cover-view class="countdown">
-      abcdf
+      {{countdown.day}} Days {{countdown.hour}} Hours {{countdown.min}} Mins {{countdown.second}} Seconds
   </cover-view>
   </video>
+
+  <map id="map" longitude="-73.966051" latitude="40.768594" scale="14"  show-location style="width: 100%; height: 300px;"></map>
 
 </view>

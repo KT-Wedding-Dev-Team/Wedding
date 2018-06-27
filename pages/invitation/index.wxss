@@ -1,15 +1,96 @@
 /* pages/invitation/index.wxss */
-.border-image{ 
-  position: fixed;
-  bottom: 0; 
-  width:100%;  
+.bottom-image {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
-.letter{
+
+.letter {
+  height: 90vh;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
 }
 
-.letter image {
-    width: 600rpx;
+.envelope {
+  width: 600rpx;
+  height: 333rpx;
+  border-radius:5%;
 }
+
+.boarding {
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.boarding-pass {
+  width: 725rpx;
+  height: 100vh;
+}
+
+.swiper {
+  width: 750rpx;
+  height: 100vh;
+}
+.swiper swiper{
+  width: 750rpx;
+  height: 100vh;
+}
+.swiper swiper-item{
+  width: 750rpx;
+  height: 100vh;
+}
+
+image.arrow{
+  width:70rpx;
+  height:70rpx;
+}
+image.prev{
+  position:absolute;
+  left:3rpx;
+  top:0%;
+}
+
+image.next{
+  position:absolute;
+  right:5rpx;
+  top:50%;
+  width:90rpx;
+
+}
+
+
+.actionSheetPH {
+  color:#828282;
+}
+
+.right__flex__item {
+  border-left:1px solid #e5e5e5;
+}
+.so-input {
+  padding-left: 15rpx;
+}
+
+.btn-area {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  display: flex;
+  justify-content: center; 
+  height:100rpx;
+}
+
+.btn-item {
+  width: 90%;
+  background-color: #F5BBCB;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-item::after {
+  border: 0;
+}
+

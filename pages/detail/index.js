@@ -1,10 +1,15 @@
-// pages/map/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    countdown:{
+      day: null,
+      hour: null,
+      min: null,
+      second: null,
+    }
 
   },
 
@@ -26,6 +31,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    if (!this.videoContext){
+      this.videoContext = wx.createVideoContext('myVideo');
+    }
+    this.videoContext.play();
 
   },
 
@@ -63,5 +72,9 @@ Page({
   onShareAppMessage: function() {
 
   },
+
+  pauseHandler: function(e) {
+    this.videoContext.play();
+  }
 
 });

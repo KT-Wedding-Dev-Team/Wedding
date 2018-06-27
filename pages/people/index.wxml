@@ -1,0 +1,10 @@
+        <block wx:for="{{people}}" wx:for-item="item">
+            <view class="msgarea{{item.gender != 'female' ? ' fromme' : ' other'}}">
+                <image class="icon" src="/images/pic_160.png" style="width:100rpx; height:100rpx;"></image>
+                <view class="container-msg-name">
+                  <view class="name"> <text>{{item.name}}</text></view>
+                  <view class="msg">{{item.summary}}</view>
+                </view>
+                <view class="clearfix"></view>
+            </view>
+        </block>

@@ -1,0 +1,10 @@
+
+<view class="section">
+  <video id="myVideo" src="https://d3rgbrsgh3n846.cloudfront.net/video/test.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover"
+  >
+  <cover-view class="countdown">
+      abcdf
+  </cover-view>
+  </video>
+
+</view>

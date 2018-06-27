@@ -3,23 +3,25 @@
 const app = getApp();
 Page({
   data: {
-    isPlayingMusic: true,
+    isPlayingMusic: false,
   },
   onLoad: function() {
     let that = this;
+    console.log(app.globalData);
     wx.request({
-      url: 'https://api.orchid9.com/actions/media_info',
+      url: app.globalData['server'] + '/actions/media_info',
       method: 'GET',
       header: {
         'Accept': 'application/json',
       },
       success: function(res) {
-        wx.playBackgroundAudio({
-          dataUrl: res.data.music_url,
-          title: '',
-          coverImgUrl: '',
-        });
-
+        if (that.data.isPlayingMusic) {
+          wx.playBackgroundAudio({
+            dataUrl: res.data.music_url,
+            title: '',
+            coverImgUrl: '',
+          });
+        };
         that.setData({
           slideList: res.data.slideList,
           music_url: res.data.music_url,

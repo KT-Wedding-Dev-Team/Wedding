@@ -1,49 +1,45 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/groomsmen/index",
-    "pages/bridesmaids/index",
+    "pages/people/index",
     "pages/invitation/index",
-    "pages/transportation/index"
+    "pages/detail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8",
     "navigationBarTitleText": " Louise & Tian",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#ccc",
-    "selectedColor": "#ffffff",
+    "selectedColor": "#f8f8f8",
     "borderStyle": "white",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#f8f8f8",
     "list": [
-      {
-        "pagePath": "pages/invitation/index",
-        "iconPath": "images/3.png",
-        "selectedIconPath": "images/3_selected.png"
-      },
-      {
-        "pagePath": "pages/groomsmen/index",
-        "iconPath": "images/1.png",
-        "selectedIconPath": "images/1_selected.png"
-      },
       {
         "pagePath": "pages/index/index",
         "iconPath": "images/0.png",
         "selectedIconPath": "images/0_selected.png"
       },
       {
-        "pagePath": "pages/bridesmaids/index",
-        "iconPath": "images/2.png",
-        "selectedIconPath": "images/2_selected.png"
+        "pagePath": "pages/invitation/index",
+        "iconPath": "images/3.png",
+        "selectedIconPath": "images/3_selected.png"
       },
       {
-        "pagePath": "pages/transportation/index",
+        "pagePath": "pages/detail/index",
         "iconPath": "images/4.png",
         "selectedIconPath": "images/4_selected.png"
+      },
+      {
+        "pagePath": "pages/people/index",
+        "iconPath": "images/2.png",
+        "selectedIconPath": "images/2_selected.png"
       }
+
     ]
   }
 }

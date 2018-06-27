@@ -1,6 +1,7 @@
 // app.js
 App({
   logIn: function(cb) {
+    let that = this;
     wx.checkSession({
       success: function(e) {
         console.log('session 未过期');
@@ -12,7 +13,10 @@ App({
           success: function(res) {
             if (res.code) {
               wx.request({
-                url: 'https://api.orchid9.com/users/login?js_code=' + res.code,
+                url: that.globalData['server'] +'/users/login',
+                data: {
+                  'js_code': res.code,
+                },
                 method: 'GET',
                 header: {
                   'Accept': 'application/json',
@@ -49,7 +53,14 @@ App({
       }
     });
   },
+  checkCompatibility(){
+
+    console.log(wx.canIUse("cover-view"));
+    console.log(wx.canIUse("button.getUserInfo"));
+  },
   onLaunch: function() {
+    console.log(wx.getSystemInfoSync());
+    this.checkCompatibility();
     this.logIn(function() {});
   },
   globalData: {

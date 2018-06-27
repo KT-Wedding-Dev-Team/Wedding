@@ -1,0 +1,57 @@
+.msgarea {
+  padding: 20rpx 10rpx;
+}
+.clearfix:after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+
+.clearfix{height:1%;}
+.msg {
+    border: 1px solid #d8d8d8;
+    font-size: 32rpx;
+    display: inline-block;
+    padding: 14rpx 20rpx;
+    max-width: 450rpx;
+    border-radius: 10rpx;
+}
+.icon {
+    width: 70rpx;
+    height: 70rpx;
+}
+.fromme > .container-msg-name > .msg {
+  background-color: #9fe757;
+  float: right;
+}
+.fromme > .container-msg-name {
+    float: right;
+    margin-right: 10rpx;
+}
+.fromme > .icon {
+    float: right;
+    margin-right: 10rpx;
+}
+.fromme > .container-msg-name > .name {
+  font-size: 25rpx;
+  text-align: right;
+  margin-top:-10rpx;
+}
+.other > .container-msg-name {
+    float: left;
+    margin-left: 10rpx;
+}
+.other > .container-msg-name > .msg {
+  background-color: #fff;
+}
+.other > .icon {
+  float: left;
+  margin-left: 10rpx;
+}
+
+.other > .container-msg-name > .name {
+  font-size: 25rpx;
+  margin-top:-10rpx;
+}

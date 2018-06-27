@@ -1,2 +1,172 @@
 <!--pages/invitation/index.wxml-->
-<text>pages/invitation/index.wxml</text>
+<view class="page">
+
+  <view class="container" wx:if="{{show_letter}}">
+    <view animation="{{animationData}}" class="letter" >
+      <button id="userinfo" open-type="getUserInfo" bindgetuserinfo="userInfoHandler" hidden='true' >  </button>
+      <label for='userinfo'>  
+        <image class='envelope' src="https://d3rgbrsgh3n846.cloudfront.net/invitation_unopened.jpg"/>    
+      </label> 
+    </view>
+
+    <image class='bottom-image' src="https://d3rgbrsgh3n846.cloudfront.net/invitation_background.jpg"  mode="widthFix"/>
+  </view>
+  <view wx:else class="swiper">
+    <swiper current='{{swiper.current}}' bindchange="swiperChange">
+        
+      <swiper-item >
+          <image class="boarding-pass" src="{{invitation_url}}" bindtap="previewImage" mode="aspectFit"/>
+      </swiper-item>
+      
+      <swiper-item style="overflow: scroll;">
+  <scroll-view scroll-y="true">
+
+        <view class='rsvp'>
+          <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
+            <view class="weui-cells__title">回执状态</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <view class="weui-label">出席人数</view>
+                </view>
+                <button id='attendanceAction' plain='true' hidden='true' bindtap="attendanceASChange"></button>  
+                <label class='weui-cell__bd weui-input' for='attendanceAction'>   
+                  <text wx:if="{{attendance_index!=null}}" >{{attendances[attendance_index]}}</text>  
+                  <text wx:else class="actionSheetPH">请选择人数</text>  
+                </label> 
+              </view>             
+            </view>
+            <block wx:if="{{attendance_index && attendance_index <2}}">
+              <view class="weui-cells__title">{{attendance_index ==1? '您和您伴侣的信息': '您的信息'}}</view>
+              <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <view class="weui-flex">
+                        <input class="weui-flex__item weui-input" placeholder="请输入" value="{{real_name}}"/>
+                      <block wx:if="{{attendance_index==1}}">
+                        <input class="weui-input so-input weui-flex__item right__flex__item" placeholder="请输入" value="{{so_name}}"/>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">主菜</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <view class="weui-flex">
+                        <button id='entreeAction' plain='true' hidden='true' bindtap="entreeASChange"></button>  
+                        <label class='weui-cell__bd weui-input weui-flex__item' for='entreeAction'>
+                          <text wx:if="{{entree!=null}}" >{{entrees[entree]}}</text>  
+                          <text wx:else class="actionSheetPH">请选择</text>  
+                        </label> 
+                      <block wx:if="{{attendance_index==1}}" >
+                        <button id='soEntreeAction' plain='true' hidden='true' bindtap="soEntreeASChange"></button>  
+                        <label class='weui-cell__bd weui-input so-input weui-flex__item right__flex__item' for='soEntreeAction'>
+                          <text wx:if="{{so_entree!=null}}" >{{entrees[so_entree]}}</text>  
+                          <text wx:else class="actionSheetPH">请选择</text>  
+                        </label> 
+                      </block>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">忌口</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="if any"/>
+                    </view>
+                  </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">喜欢的舞曲</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="if any"/>
+                    </view>
+                  </view>
+                </view>
+              </view>
+
+              <view class="weui-cells__title">纸质邀请函</view>
+              <view class="weui-cells weui-cells_after-title">
+                <checkbox-group bindchange="paperInvitationChange">
+                  <label class="weui-cell weui-check__label" >
+                    <checkbox class="weui-check" value="Yes" checked="{{paper_invitation}}"/>
+                    <view class="weui-cell__bd">是否需要纸质邀请函</view>
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" color="#F5BBCB" wx:if="{{!paper_invitation}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" color="#F5BBCB" wx:if="{{paper_invitation}}"></icon>
+                    </view>                 
+                  </label>
+                </checkbox-group>
+
+                <block wx:if="{{paper_invitation}}">
+                  <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__bd">
+                      <input class="weui-flex__item weui-input" placeholder="街道地址"/>
+                    </view>
+                  </view>
+                  <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__bd">
+                      <view class="weui-flex">
+                        <input class="weui-flex__item weui-input" placeholder="市"/>            
+                        <input class="weui-flex__item weui-input right__flex__item so-input" placeholder="州/省"/>
+                        <input class="weui-flex__item weui-input right__flex__item so-input" placeholder="国家"/>
+                        <input class="weui-flex__item weui-input right__flex__item so-input" placeholder="邮编"/>
+                      </view>
+                    </view>
+                  </view>  
+                </block>           
+              </view>
+
+            </block>
+
+
+            <view class="weui-flex">
+              <view class="weui-flex__item btn-area">
+                <button class="weui-btn btn-item" bindtap="prevItem" size="default">返回</button>
+              </view>
+              <view class="weui-flex__item btn-area" >
+                <button class="weui-btn btn-item" size="default"><view class="container">寄出</view></button>
+              </view>
+            </view>
+          </form>
+        </view>
+      </scroll-view>
+      </swiper-item>       
+    </swiper>
+
+    <image wx:if="{{swiper.current!= swiper.length-1}}" class='next arrow' bindtap='nextItem' src='/images/next.png'/>
+  </view>
+
+    <!-- 底部菜单组件 -->
+  <action-sheet hidden="{{attendance_as_hidden}}" bindchange="attendanceASChange">
+    <block wx:for="{{attendances}}" wx:key="*this">
+      <action-sheet-item  class="item" bindtap="attendanceASItemTap" data-name="{{index}}" style="color: #F5BBCB">{{item}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel >取消</action-sheet-cancel>
+  </action-sheet>
+  
+  <action-sheet hidden="{{entree_as_hidden}}" bindchange="entreeASChange">
+    <block wx:for="{{entrees}}" wx:key="*this">
+      <action-sheet-item  class="item" bindtap="entreeASItemTap" data-name="{{index}}" style="color: #F5BBCB">{{item}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel >取消</action-sheet-cancel>
+  </action-sheet>
+  <action-sheet hidden="{{so_entree_as_hidden}}" bindchange="soEntreeASChange">
+    <block wx:for="{{entrees}}" wx:key="*this">
+      <action-sheet-item  class="item" bindtap="soEntreeASItemTap" data-name="{{index}}" style="color: #F5BBCB">{{item}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel >取消</action-sheet-cancel>
+  </action-sheet>
+</view>
+

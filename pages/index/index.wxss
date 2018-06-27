@@ -12,6 +12,8 @@
 .swiper swiper-item{
   width: 750rpx;
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .swiper image{
   width: 750rpx;

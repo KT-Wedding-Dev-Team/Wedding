@@ -1,12 +1,29 @@
 
 <view class="section">
-  <video id="myVideo" src="https://d3rgbrsgh3n846.cloudfront.net/video/test.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover"
+  <video id="myVideo" src="https://cdn.orchid9.com/video/source/pvg.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover" 
   >
-  <cover-view class="countdown">
-      {{countdown.day}} Days {{countdown.hour}} Hours {{countdown.min}} Mins {{countdown.second}} Seconds
-  </cover-view>
+    <cover-view class="countdown-parent">
+      <cover-view class="countdown">
+        <cover-view class="countdown-component">
+          <cover-view class="top">{{countdown.day}}</cover-view>
+          <cover-view class="bottom">DAYS</cover-view>
+        </cover-view>
+        <cover-view class="countdown-component">
+          <cover-view class="top">{{countdown.hour}}</cover-view>
+          <cover-view class="bottom">HOURS</cover-view>
+        </cover-view>
+        <cover-view class="countdown-component">
+          <cover-view class="top">{{countdown.min}}</cover-view>
+          <cover-view class="bottom">MINS</cover-view>
+        </cover-view>
+        <cover-view class="countdown-component">
+          <cover-view class="top">{{countdown.second}}</cover-view>
+          <cover-view class="bottom">SECS</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
   </video>
 
-  <map id="map" longitude="-73.966051" latitude="40.768594" scale="14"  show-location style="width: 100%; height: 300px;"></map>
+
 
 </view>

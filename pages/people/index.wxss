@@ -23,8 +23,9 @@
     height: 70rpx;
 }
 .fromme > .container-msg-name > .msg {
-  background-color: #9fe757;
+  background-color: #F5BBCB;
   float: right;
+  border: 1px solid #F5BBCB;
 }
 .fromme > .container-msg-name {
     float: right;
@@ -37,7 +38,6 @@
 .fromme > .container-msg-name > .name {
   font-size: 25rpx;
   text-align: right;
-  margin-top:-10rpx;
 }
 .other > .container-msg-name {
     float: left;

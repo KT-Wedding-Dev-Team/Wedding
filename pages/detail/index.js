@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cdn_server: app.globalData['cdn_server'],
+    location:'nyc',
     countdown:{
       duration:null,
       day: null,
@@ -34,6 +36,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    this.data.location = app.globalData['user'].location;
     if (!this.videoContext){
       this.videoContext = wx.createVideoContext('myVideo');
     }
@@ -101,7 +104,6 @@ Page({
     remainder = remainder % 3600;
     var mins = ~~(remainder / 60);
     var seconds = ~~(remainder % 60);
-    console.log(seconds);
     this.setData({
       'countdown':{
         duration:duration,

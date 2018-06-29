@@ -4,6 +4,7 @@ const app = getApp();
 Page({
   data: {
     isPlayingMusic: false,
+    cdn_server: app.globalData['cdn_server'],
   },
   onLoad: function() {
     let that = this;
@@ -15,16 +16,17 @@ Page({
         'Accept': 'application/json',
       },
       success: function(res) {
+        var music_url = app.globalData['cdn_server'] + '/'+ res.data.music_url;
         if (that.data.isPlayingMusic) {
           wx.playBackgroundAudio({
-            dataUrl: res.data.music_url,
+            dataUrl: music_url,
             title: '',
             coverImgUrl: '',
           });
         };
         that.setData({
           slideList: res.data.slideList,
-          music_url: res.data.music_url,
+          music_url: music_url,
         });
       },
     });

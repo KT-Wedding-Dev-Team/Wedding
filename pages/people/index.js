@@ -7,12 +7,12 @@ Page({
   data: {
     people: [
       {
-        'name': '胡雨凡',
+        'name': '吴诗媛',
         'gender':'female',
         'summary': 'a',
       },
       {
-        'name': '楚天舒',
+        'name': '张涵予',
         'gender': 'male',
         'summary': 'a',
       },
@@ -22,17 +22,17 @@ Page({
         'summary': 'a',
       },
       {
-        'name': '段理',
+        'name': '蒋嘉琛',
         'gender': 'male',
         'summary': 'a',
       },
       {
-        'name': '吴诗媛',
+        'name': '胡羽凡',
         'gender': 'female',
         'summary': 'a',
       },
       {
-        'name': '蒋嘉琛',
+        'name': '段理',
         'gender': 'male',
         'summary': 'a',
       },
@@ -42,7 +42,7 @@ Page({
         'summary': 'a',
       },
       {
-        'name': '张涵宇',
+        'name': '楚天舒',
         'gender': 'male',
         'summary': 'a',
       },

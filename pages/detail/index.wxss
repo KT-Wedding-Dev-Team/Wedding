@@ -2,6 +2,39 @@
   width:100%;
 }
 
+.countdown-parent {
+  width:100%;
+  display:flex;
+  justify-content: center;
+  height:100%;
+}
 .countdown {
-  color:rgba(255,255,255,0.3);
+  color:rgba(255,255,255,0.86);
+  font-family:Lato;
+  font-weight:100;
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  top:65%;
+}
+
+.countdown-component {
+  width:120rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.top {
+  width: 100%;
+  font-size: 65rpx;
+  margin-bottom: 6rpx;
+  text-align: center;
+}
+.bottom {
+  width:100%;
+  margin-top: 6rpx;
+  font-size: 25rpx;
+  text-align: center;
+
 }

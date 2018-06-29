@@ -55,9 +55,9 @@ image.prev{
 
 image.next{
   position:absolute;
-  right:5rpx;
+  right:7rpx;
   top:50%;
-  width:90rpx;
+  width:115rpx;
 
 }
 

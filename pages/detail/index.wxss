@@ -1,7 +1,19 @@
 #myVideo {
   width:100%;
 }
+.detail-content {
+  width: 100%;
+  background-color: rgb(255,255,255);
+  display: flex;
+  justify-content: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-top: 1rpx solid #d9d9d9;
+  border-bottom: 1rpx solid #d9d9d9;
+  flex-direction: column;
+  align-items: center;
 
+}
 .countdown-parent {
   width:100%;
   display:flex;
@@ -9,8 +21,8 @@
   height:100%;
 }
 .countdown {
-  color:rgba(255,255,255,0.86);
-  font-family:Lato;
+  color:rgba(255,255,255,0.9);
+  font-family: LatoLatin, sans-serif;
   font-weight:100;
   display: flex;
   flex-flow: row;
@@ -27,14 +39,59 @@
 
 .top {
   width: 100%;
-  font-size: 65rpx;
-  margin-bottom: 6rpx;
+  font-size: 75rpx;
   text-align: center;
 }
 .bottom {
   width:100%;
-  margin-top: 6rpx;
-  font-size: 25rpx;
+  font-size: 30rpx;
   text-align: center;
 
 }
+
+.detail-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.detail {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width:100%;
+}
+
+.detail-icon {
+  width: 90rpx;
+  height:90rpx;
+  border-radius: 20rpx;
+}
+
+.detail-image-container{
+  display: flex;
+  flex-flow: row;
+}
+.detail-image {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.icon-text {
+  font-size: 20rpx;
+}
+
+.detail-title {
+  font-size: 100rpx;
+  
+}
+
+.content-text {
+  font-weight: 400;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+}
+

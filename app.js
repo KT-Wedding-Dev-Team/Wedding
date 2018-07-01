@@ -14,6 +14,7 @@ App({
               that.callLogIn();
             }
           } catch (e) {
+            console.log(e);
             that.callLogIn();
           }
         }
@@ -94,7 +95,19 @@ App({
       },
     })
   },
-
+  playBackgroundAudioInLoop: function(url, title, imgUrl){
+    var that = this;
+    wx.playBackgroundAudio({
+      dataUrl: url,
+      title: title,
+      coverImgUrl: imgUrl,
+    });
+    var manager = wx.getBackgroundAudioManager();
+    manager.onEnded(function(){
+      playBackgroundAudioInLoop(url, title, imgUrl);
+    });
+    
+  },
   onLaunch: function() {
     this.globalData.hasLoggedIn=true;
     this.logIn();

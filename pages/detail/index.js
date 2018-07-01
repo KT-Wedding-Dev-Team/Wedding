@@ -21,7 +21,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.getBackgroundAudioManager().onPause(function () {
+      wx.getBackgroundAudioManager().play();
+    });
 
   },
 
@@ -36,7 +38,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.data.location = app.globalData['user'].location;
+    this.setData({
+      'location': app.globalData['user'].location,
+    });
     if (!this.videoContext){
       this.videoContext = wx.createVideoContext('myVideo');
     }
@@ -45,14 +49,18 @@ Page({
       clearInterval(this.interval_timer_id);
     }
     app.webCall(app.globalData['api_server'] + '/actions/get_duration', {}, this.onGetDurationSucess, function () { }, function () { }, "GET", 5);
-
+    //this is a fix for audio pause due to video play
+    wx.getBackgroundAudioManager().onPause(function(){
+      wx.getBackgroundAudioManager().play();
+    });
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    wx.getBackgroundAudioManager().onPause(function () {
+    });
   },
 
   /**

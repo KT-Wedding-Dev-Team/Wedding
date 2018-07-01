@@ -295,6 +295,7 @@ Page({
       'real_name': res.data['real_name'],
       'so_name': res.data['so_name'],
       'count':res.data['count'],
+      'attendance_index':  res.data['count']== null ? null: (res.data['count']+2)%3, 
       'location':res.data['location'],
 
        });

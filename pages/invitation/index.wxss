@@ -43,21 +43,13 @@
   height: 100vh;
 }
 
-image.arrow{
-  width:70rpx;
-  height:70rpx;
-}
-image.prev{
-  position:absolute;
-  left:3rpx;
-  top:0%;
-}
 
 image.next{
   position:absolute;
-  right:7rpx;
+  right:4rpx;
   top:50%;
-  width:115rpx;
+  width:100rpx;
+  height:65rpx;
 
 }
 

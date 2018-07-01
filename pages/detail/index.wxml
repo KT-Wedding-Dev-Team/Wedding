@@ -1,29 +1,102 @@
 
 <view class="section">
-  <video id="myVideo" src="https://cdn.orchid9.com/video/source/pvg.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover" 
+  <video id="myVideo" src="https://cdn.orchid9.com/video/source/pvg.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover" muted="true" 
   >
     <cover-view class="countdown-parent">
       <cover-view class="countdown">
         <cover-view class="countdown-component">
-          <cover-view class="top">{{countdown.day}}</cover-view>
+          <cover-view class="top">{{countdown.day<10? "0":""}}{{countdown.day}}</cover-view>
           <cover-view class="bottom">DAYS</cover-view>
         </cover-view>
         <cover-view class="countdown-component">
-          <cover-view class="top">{{countdown.hour}}</cover-view>
+          <cover-view class="top">{{countdown.hour<10? "0":""}}{{countdown.hour}}</cover-view>
           <cover-view class="bottom">HOURS</cover-view>
         </cover-view>
         <cover-view class="countdown-component">
-          <cover-view class="top">{{countdown.min}}</cover-view>
+          <cover-view class="top">{{countdown.min<10? "0":""}}{{countdown.min}}</cover-view>
           <cover-view class="bottom">MINS</cover-view>
         </cover-view>
         <cover-view class="countdown-component">
-          <cover-view class="top">{{countdown.second}}</cover-view>
+          <cover-view class="top">{{countdown.second<10? "0":""}}{{countdown.second}}</cover-view>
           <cover-view class="bottom">SECS</cover-view>
         </cover-view>
       </cover-view>
     </cover-view>
   </video>
 
+  <view class="detail-container">
+    <view class="detail">
+      <view class='detail-title'>🕔</view>
+      <view class='detail-content'>
+        <view class='content-text'>Ceremony starts at 5 P.M.</view>
+        <view class='content-text'>September 30th, 2018</view>
+      </view>
+    </view>
+
+    <view class="detail">
+      <view class='detail-title'>💒</view>
+      <view class='detail-content'>
+        <view class='content-text'>Harold Pratt House
+</view>
+        <view class='content-text'>58 E. 68th St, New York</view>
+      </view>
+    </view>
+    <view class="detail">
+      <view class='detail-title'>✈️</view>
+      <view class='detail-content detail-image-container'>
+        <view class='detail-image'> 
+          <image class="detail-icon" src="/images/lga_icon.jpg"/>
+          <text class="icon-text">La Guardia</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/ewr_icon.jpg"/>
+          <text class="icon-text">Newark</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/jfk_icon.jpg"/>
+          <text class="icon-text">JFK</text>
+        </view>
+      </view>
+    </view>
+    <view class="detail">
+      <view class='detail-title'>🚘</view>
+      <view class='detail-content detail-image-container'>
+        <view class='detail-image'> 
+          <image class="detail-icon" src="/images/lyft_icon.jpg"/>
+          <text class="icon-text">Lyft</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/uber_icon.jpg"/>
+          <text class="icon-text">Uber</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/juno_icon.jpg"/>
+          <text class="icon-text">Juno</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/via_icon.jpg"/>
+          <text class="icon-text">Via</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/train6_icon.svg"/>
+          <text class="icon-text">Train 6</text>
+        </view>
+      </view>
+    </view>
+    <view class="detail">
+      <view class='detail-title'>🅿️</view>
+      <view class='detail-content detail-image-container'>
+        <view class='detail-image'> 
+          <image class="detail-icon" src="/images/park_nyc_icon.jpg"/>
+          <text class="icon-text">Park NYC</text>
+        </view>
+        <view class='detail-image'>
+          <image class="detail-icon" src="/images/best_parking_icon.jpg"/>
+          <text class="icon-text">Best Parking</text>
+        </view>
+      </view>
+    </view>
+  </view>
 
 
 </view>

@@ -1,3 +1,4 @@
+const app = getApp();
 // pages/bridesmaids/index.js
 Page({
 
@@ -5,47 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cdn_server: app.globalData['cdn_server'],
     people: [
-      {
-        'name': '吴诗媛',
-        'gender':'female',
-        'summary': 'a',
-      },
-      {
-        'name': '张涵予',
-        'gender': 'male',
-        'summary': 'a',
-      },
-      {
-        'name': '毛逸宁',
-        'gender': 'female',
-        'summary': 'a',
-      },
-      {
-        'name': '蒋嘉琛',
-        'gender': 'male',
-        'summary': 'a',
-      },
-      {
-        'name': '胡羽凡',
-        'gender': 'female',
-        'summary': 'a',
-      },
-      {
-        'name': '段理',
-        'gender': 'male',
-        'summary': 'a',
-      },
-      {
-        'name': '郭佳',
-        'gender': 'female',
-        'summary': 'a',
-      },
-      {
-        'name': '楚天舒',
-        'gender': 'male',
-        'summary': 'a',
-      },
     ]
   },
 
@@ -53,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    app.webCall(app.globalData['api_server'] + '/actions/get_people', {}, this.onGetPeopleSuccess, function () { }, function () { }, 'GET', 5, app.globalData['token']);
   },
 
   /**
@@ -102,6 +64,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return app.share();
   },
+
+  onGetPeopleSuccess: function(res) {
+    this.setData({
+      'people': res.data['people'],
+
+    });
+  }
 });

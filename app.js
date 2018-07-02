@@ -5,18 +5,16 @@ App({
     wx.checkSession({
       success: function(e) {
         if (!that.globalData.token){
-          try {
-            var value = wx.getStorageSync('token')
-            if (token) {
-              that.globalData.token = value;
-            }
-            else {
-              that.callLogIn();
-            }
-          } catch (e) {
-            console.log(e);
-            that.callLogIn();
-          }
+            wx.getStorage({
+              key: 'token',
+              success: function (res) {
+                that.globalData.token = res.data;
+              },
+              fail: function (res){
+                that.callLogIn();
+              }
+            })
+            
         }
       },
       fail: function() {
@@ -40,7 +38,6 @@ App({
               'Accept': 'application/json',
             },
             success: function (res) {
-              console.log(res);
               that.globalData.token = res.data['token'];
               that.globalData.user = res.data['user'];
               wx.setStorage({
@@ -111,6 +108,7 @@ App({
   onLaunch: function() {
     this.globalData.hasLoggedIn=true;
     this.logIn();
+    
   },
 
   onShow: function(){   
@@ -118,7 +116,25 @@ App({
 
   },
 
-
+  share: function(){
+    return {
+      title: 'Louise & Tian Wedding',
+      imageUrl: 'https://cdn.orchid9.com/share.jpg',
+      path: 'pages/index/index',
+      success: function (res) {
+        wx.showToast({
+          title: '分享成功',
+          icon:'success',
+        });
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '分享取消',
+        });
+      },
+    };
+  },
   globalData: {
     hasLoggedIn:false,
     api_server: 'https://api.orchid9.com',

@@ -38,6 +38,7 @@
 .fromme > .container-msg-name > .name {
   font-size: 25rpx;
   text-align: right;
+  margin-top:-7rpx;
 }
 .other > .container-msg-name {
     float: left;
@@ -53,5 +54,5 @@
 
 .other > .container-msg-name > .name {
   font-size: 25rpx;
-  margin-top:-10rpx;
+  margin-top:-7rpx;
 }

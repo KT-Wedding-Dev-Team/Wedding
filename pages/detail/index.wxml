@@ -1,6 +1,6 @@
 
 <view class="section">
-  <video id="myVideo" src="https://cdn.orchid9.com/video/source/pvg.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover" muted="true" 
+  <video id="myVideo" src="{{cdn_server}}/video/source/{{location}}.mp4" controls="{{false}}" autoplay="true" loop="true" bindpause="pauseHandler" objectFit="cover" muted="true"
   >
     <cover-view class="countdown-parent">
       <cover-view class="countdown">

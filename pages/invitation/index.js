@@ -113,14 +113,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return app.share();
   },
 
   /**
    * Handle get userinfo event
    */
   userInfoHandler: function(event){
-    console.log(event);
     let that = this;
     //use accept to give info
     if (event['detail']['userInfo']){

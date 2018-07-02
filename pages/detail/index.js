@@ -21,10 +21,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.getBackgroundAudioManager().onPause(function () {
-      wx.getBackgroundAudioManager().play();
+    var manager = wx.getBackgroundAudioManager();
+    manager.onPause(function () {
+      manager.play();
     });
-
+    manager.onPlay(
+      function () {
+        manager.onPause(function(){})
+      }
+    );
+    if (wx.canIUse('loadFontFace')) {
+      wx.loadFontFace({
+        family: 'Lato',
+        source: 'url("https://cdn.orchid9.com/fonts/LatoLatin-Thin.ttf")',
+      });
+    }
   },
 
   /**
@@ -39,7 +50,7 @@ Page({
    */
   onShow: function() {
     this.setData({
-      'location': app.globalData['user'].location,
+      location: app.globalData['user'].location,
     });
     if (!this.videoContext){
       this.videoContext = wx.createVideoContext('myVideo');
@@ -50,9 +61,14 @@ Page({
     }
     app.webCall(app.globalData['api_server'] + '/actions/get_duration', {}, this.onGetDurationSucess, function () { }, function () { }, "GET", 5);
     //this is a fix for audio pause due to video play
-    wx.getBackgroundAudioManager().onPause(function(){
-      wx.getBackgroundAudioManager().play();
+    var manager = wx.getBackgroundAudioManager();
+    manager.onPause(function(){
+      manager.play();
     });
+    manager.onPlay(function(){
+      manager.onPause(function(){})}
+    );
+
   },
 
   /**
@@ -88,9 +104,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return app.share();
   },
-
   pauseHandler: function(e) {
     this.videoContext.play();
   },

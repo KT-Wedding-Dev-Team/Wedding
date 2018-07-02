@@ -22,8 +22,8 @@
 }
 .countdown {
   color:rgba(255,255,255,0.9);
-  font-family: LatoLatin, sans-serif;
-  font-weight:100;
+  font-family: Lato, sans-serif;
+  font-weight: 100;
   display: flex;
   flex-flow: row;
   position: relative;

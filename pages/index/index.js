@@ -3,7 +3,7 @@
 const app = getApp();
 Page({
   data: {
-    isPlayingMusic: false,
+    isPlayingMusic: true,
     cdn_server: app.globalData['cdn_server'],
     music_url:null,
     music_title:null,
@@ -22,8 +22,23 @@ Page({
         var music_title = that.baseName(res.data.music_url);
         var music_cover_img_url = app.globalData['cdn_server'] + '/' + "cover_images/" + encodeURIComponent(music_title+'.jpg').replace("'", "%27");
         if (that.data.isPlayingMusic) {
-          app.playBackgroundAudioInLoop(music_url, music_title,music_cover_img_url).bind(that);
-
+          app.playBackgroundAudioInLoop(music_url, music_title,music_cover_img_url);
+          var manager = wx.getBackgroundAudioManager();
+          manager.onPause(function () {
+            that.setData({
+              isPlayingMusic: false,
+            })
+          });
+          manager.onStop(function () {
+            that.setData({
+              isPlayingMusic: false,
+            })
+          });
+          manager.onPlay(function () {
+            that.setData({
+              isPlayingMusic: true,
+            })
+          })
         };
         that.setData({
           slideList: res.data.slideList,
@@ -38,11 +53,26 @@ Page({
     // 页面渲染完成
   },
   onShow: function() {
-    var audio = wx.getBackgroundAudioManager(); 
-
-    this.setData({
-      isPlayingMusic: audio.paused == false,
+    var manager = wx.getBackgroundAudioManager(); 
+    var that = this;
+    manager.onPause(function () {
+      that.setData({
+        isPlayingMusic: false,
+      })
     });
+    manager.onStop(function () {
+      that.setData({
+        isPlayingMusic: false,
+      })
+    });
+    manager.onPlay(function () {
+      that.setData({
+        isPlayingMusic: true,
+      })
+    });
+    this.setData ({
+      isPlayingMusic: manager.paused == undefined ? this.data.isPlayingMusic: !manager.paused,
+    })
     // 页面显示
   },
   onHide: function() {
@@ -52,24 +82,7 @@ Page({
     // 页面关闭
   },
   onShareAppMessage: function(res) {
-    let that = this;
-    console.log('lol');
-    return {
-      title: that.data.mainInfo.share,
-      imageUrl: that.data.mainInfo.thumb,
-      path: 'pages/index/index',
-      success: function(res) {
-        wx.showToast({
-          title: '分享成功',
-        });
-      },
-      fail: function(res) {
-        // 转发失败
-        wx.showToast({
-          title: '分享取消',
-        });
-      },
-    };
+    return app.share();
   },
   play: function(event) {
     if (this.data.isPlayingMusic) {
@@ -94,6 +107,11 @@ Page({
           isPlayingMusic: false,
         })
       });
+      manager.onPlay(function(){
+        that.setData({
+          isPlayingMusic: true,
+        })
+      })
     }
   },
 
